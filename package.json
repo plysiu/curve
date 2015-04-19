@@ -1,0 +1,35 @@
+{
+  "name": "hilbert-curve",
+  "version": "0.0.0",
+  "description": "Implementation of hilbert curve in javaScript",
+  "main": "index.js",
+  "dependencies": {
+    "canvas": "^1.2.1",
+    "color": "^0.8.0",
+    "gulp": "^3.8.11",
+    "interpolating-polynomial": "^1.1.2",
+    "lerp": "^1.0.3",
+    "smoothstep": "^1.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plysiu/hilbert-curve.git"
+  },
+  "keywords": [
+    "hilbert",
+    "interpolation",
+    "upsampling"
+  ],
+  "author": "Przemysław Płyś <przemyslaw.plys@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/plysiu/hilbert-curve/issues"
+  }
+}
