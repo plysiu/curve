@@ -4,5 +4,6 @@
   "watch": "./",
   "env": {
     "PORT": 9034
-  }
+  },
+  "ignore_watch" : [ "public/images" ],
 }
