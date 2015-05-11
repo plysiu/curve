@@ -1,0 +1,8 @@
+{
+  "name": "project_hilbertcurve",
+  "script": "./index.js",
+  "watch": "./",
+  "env": {
+    "PORT": 9034
+  }
+}
