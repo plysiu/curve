@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="Curve">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<script src="angular/angular.js"></script>
+
+<script>
+
+    angular.module('Curve', [])
+            .controller('SendController', ['$scope', '$http', function ($scope, $http) {
+                $scope.image;
+                $scope.loading = false;
+                $scope.content = '[1,0,1,0,1,0, 1,0, 1,0, 1,0, 1,0, 1]';
+
+                $scope.send = function () {
+                    $scope.loading = true;
+                    $http.post('/send', {content: JSON.parse($scope.content)})
+                            .success(function (data) {
+//                           console.log(data.toString());
+                                $scope.image = data.content;
+                                $scope.loading = false;
+                            }).error(function (error, a, b, c) {
+                                console.log(error, a, b, c);
+                            });
+                }
+            }]);
+
+
+</script>
+<body>
+
+<div class="container" ng-controller="SendController">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="page-header">
+                <h1>Witaj Królu Julianie<br/>
+                    <small>To magiczne urządzenie będzie masowało Ci stopy</small>
+                </h1>
+                <footer>Powiedział <cite title="Source Title">Moris</cite></footer>
+            </div>
+            <form>
+                <div class="form-group">
+                    <textarea rows="4" ng-model="content" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-warning btn-block" ng-disabled="loading" ng-click="send()">Wyślij</button>
+                </div>
+
+            </form>
+            <div  ng-if="image">
+                <img ng-src="images/{{image}}.png"  class=" img-responsive img-thumbnail"/>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

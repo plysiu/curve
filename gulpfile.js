@@ -4,5 +4,5 @@ gulp.task('start', function () {
     nodemon({
         script: 'index.js'
         , ext: 'js json'
-    })
-})
+    });
+});
